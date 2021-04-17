@@ -9,7 +9,7 @@ use dumbways;
 // create table penulis 
 
 create table penulis (
-    id int,
+    id int NOT NULL AUTO_INCREMENT,
     name varchar (255),
     age int(5)
   );
@@ -17,7 +17,7 @@ create table penulis (
 // create table book_tb
 
 create table book_tb ( 
-    id int, 
+    id int NOT NULL AUTO_INCREMENT,
     name varchar (255), 
     category_id int (5),
     penulis_id int (5), 
@@ -28,7 +28,7 @@ create table book_tb (
 // create table category_tb
   
   create table category_tb (
-    id int (5),
+    id int NOT NULL AUTO_INCREMENT,
     name varchar (255)
   );
 
