@@ -1,0 +1,77 @@
+soal 4a
+
+// create database 
+create database dumbways;
+
+// use database;
+use dumbways;
+
+// create table penulis 
+
+create table penulis (
+    id int,
+    name varchar (255),
+    age int(5)
+  );
+
+// create table book_tb
+
+create table book_tb ( 
+    id int, 
+    name varchar (255), 
+    category_id int (5),
+    penulis_id int (5), 
+    publication_year int(10), 
+    img varchar (255) 
+  );
+
+// create table category_tb
+  
+  create table category_tb (
+    id int (5),
+    name varchar (255)
+  );
+
+// insert data ke table penulis
+
+insert into penulis values (1, 'edi', 25);
+insert into penulis values (2, 'koswara', 30);
+insert into penulis values (3, 'angga', 35);
+insert into penulis values (4, 'ayu utami', 40);
+insert into penulis values (5, 'eka', 20);
+
+
+// insert data ke table book
+
+insert into book_tb values
+( 1, 'dunia shope', 1, 1, 2010, 'https://placekitten.com/200/100' ) , 
+( 2, 'dunia anna', 1, 1, 2012, 'https://placekitten.com/200/300' ) , 
+( 3, 'PHP dasar', 2, 2, 2015, 'https://placekitten.com/200/120' ) , 
+( 4, 'Tailwind CSS', 2, 3, 2019, 'https://placekitten.com/200/100' ) , 
+( 5, 'Laravel', 2, 3, 2020, 'https://placekitten.com/200/100' ); 
+
+// insert into category_tb
+insert into category_id values
+(1, 'Buku Filsafat'),
+(2, 'Buku Pemograman'),
+(3, 'Buku Ekonomi'),
+(4, 'Buku Sejarah'),
+(5, 'Buku Hacking');
+
+// menampilkan data dari table book
+select * from book_tb;
+
+// menampilkan seluruh data book, category dan penulis
+select book_tb.name, penulis.name, category_tb.name from
+((book_tb inner join penulis on book_tb.penulis_id = penulis.id) 
+inner join category_tb on book_tb.category_id = category_tb.id);
+
+// menampilkan data penulis 
+select * from penulis;
+
+// menampilkan data book, category dan penulis berdasarkan judul buku ex: Laravel
+select book_tb.name, penulis.name, category_tb.name from 
+((book_tb inner join penulis on book_tb.penulis_id = penulis.id) 
+inner join category_tb on book_tb.category_id = category_tb.id) where book_tb.name = 'Laravel';
+
+
