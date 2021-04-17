@@ -17,7 +17,7 @@ create table penulis (
 // create table book_tb
 
 create table book_tb ( 
-    id int,
+    id int, 
     name varchar (255), 
     category_id int (5),
     penulis_id int (5), 
@@ -28,7 +28,7 @@ create table book_tb (
 // create table category_tb
   
   create table category_tb (
-    id int,
+    id int (5),
     name varchar (255)
   );
 
