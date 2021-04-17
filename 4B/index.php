@@ -29,9 +29,40 @@
       <div class="row align-items-center">
         <div class="mb-5">
         <a href="/add-penulis.php" class="m-5">Tambah data penulis</a>
-        <a href="add-penulis" class="m-5">Tambah data buku</a>
-        <a href="add-penulis" class="m-5">Tambah data category</a>
+        <a href="/add-book.php" class="m-5">Tambah data buku</a>
+        <a href="/add-category.php" class="m-5">Tambah data category</a>
         </div>
+        <h1>List Penulis</h1>
+        <?php
+
+
+  $sql = "select * from penulis";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+    ?>
+          <div class="col-6 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><?= $row['name']; ?></h5>
+                <p class="card-text"><?= $row['age']; ?></p>
+                <a href="/delete-penulis.php?id=<?=$row['id'] ?>">Hapus</a>
+              </div>
+            </div>
+          </div>
+    <?php
+    }
+  } else {
+    echo "0 results";
+  }
+  $conn->close();
+
+        ?>
+
+        <h1>List ALL</h1>
         <?php
 
 

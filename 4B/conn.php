@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "yourname";
-$password = "password";
-$database  = "database";
+$username = "lavenda";
+$password = "Lavenda01!@#";
+$database  = "dumbways";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
